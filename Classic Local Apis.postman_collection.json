@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "454ea5ec-81cb-47d8-850e-8d854dd003d3",
+		"name": "Classic Local Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33168159"
+	},
+	"item": [
+		{
+			"name": "mule-db-customer-sapi-local",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "TEST1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"raj.kisan@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/query/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"query",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mule-mobile-i-eapi-local",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "test1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orders\": [\r\n        {\r\n            \"orderId\": \"O1\",\r\n\t\t\t\"countryOfOrigin\" : \"USA\",\r\n            \"customerInfo\": {\r\n                \"firstName\": \"Ravi\",\r\n                \"lastName\": \"Gupta\",\r\n                \"email\": \"ravi040689@gmail.com\",\r\n                \"phoneNumber\": \"1234567891\",\r\n                \"mobilePrefix\": \"+91\"\r\n            },\r\n            \"product\": [\r\n                {\r\n                    \"productId\": \"1\",\r\n                    \"quantity\": \"1\",\r\n                    \"totalPrice\": 10.00\r\n                },\r\n                {\r\n                    \"productId\": \"2\",\r\n                    \"quantity\": \"2\",\r\n                    \"totalPrice\": 20.40\r\n                }\r\n            ]\r\n        },\r\n\t\t{\r\n            \"orderId\": \"O2\",\r\n\t\t\t\"countryOfOrigin\" : \"IND\",\r\n            \"customerInfo\": {\r\n                \"firstName\": \"Ravi\",\r\n                \"lastName\": \"Gupta\",\r\n                \"email\": \"ravi040689@gmail.com\",\r\n                \"phoneNumber\": \"1234567891\",\r\n                \"mobilePrefix\": \"+91\"\r\n            },\r\n            \"product\": [\r\n                {\r\n                    \"productId\": \"1\",\r\n                    \"quantity\": \"1\",\r\n                    \"totalPrice\": 10.50\r\n                },\r\n                {\r\n                    \"productId\": \"2\",\r\n                    \"quantity\": \"2\",\r\n                    \"totalPrice\": 20.70\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

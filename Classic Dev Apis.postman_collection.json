@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "47b73f4c-9809-4974-b281-30ade46ddc68",
+		"name": "Classic Dev Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33168159"
+	},
+	"item": [
+		{
+			"name": "mule-mobile-i-eapi-dev",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "test1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orders\": [\r\n        {\r\n            \"orderId\": \"O560018\",\r\n\t\t\t\"countryOfOrigin\" : \"USA\",\r\n            \"customerInfo\": {\r\n                \"firstName\": \"Ravi\",\r\n                \"lastName\": \"Gupta\",\r\n                \"email\": \"ravi040689@gmail.com\",\r\n                \"phoneNumber\": \"1234567891\",\r\n                \"mobilePrefix\": \"+91\"\r\n            },\r\n            \"product\": [\r\n                {\r\n                    \"productId\": \"1\",\r\n                    \"quantity\": \"1\",\r\n                    \"totalPrice\": 10.00\r\n                },\r\n                {\r\n                    \"productId\": \"2\",\r\n                    \"quantity\": \"2\",\r\n                    \"totalPrice\": 20.40\r\n                }\r\n            ]\r\n        },\r\n\t\t{\r\n            \"orderId\": \"O560018\",\r\n\t\t\t\"countryOfOrigin\" : \"IND\",\r\n            \"customerInfo\": {\r\n                \"firstName\": \"Ravi\",\r\n                \"lastName\": \"Gupta\",\r\n                \"email\": \"ravi040689@gmail.com\",\r\n                \"phoneNumber\": \"1234567891\",\r\n                \"mobilePrefix\": \"+91\"\r\n            },\r\n            \"product\": [\r\n                {\r\n                    \"productId\": \"1\",\r\n                    \"quantity\": \"1\",\r\n                    \"totalPrice\": 10.50\r\n                },\r\n                {\r\n                    \"productId\": \"2\",\r\n                    \"quantity\": \"2\",\r\n                    \"totalPrice\": 20.70\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://mule-mobile-i-eapi-dev-v1.us-e2.cloudhub.io/api/order",
+					"protocol": "http",
+					"host": [
+						"mule-mobile-i-eapi-dev-v1",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mule-db-customer-sapi-dev",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "TEST1",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "187abc5eff924b758ceaeca22025f2b5",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "bC0b23a2E44D4740b0EcD54dE90D52b4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"raj.kisan@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://mule-db-customer-sapi-dev-v1.us-e2.cloudhub.io:80/api/query/customer",
+					"protocol": "http",
+					"host": [
+						"mule-db-customer-sapi-dev-v1",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"query",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mule-db-customer-sapi-dev-Negative",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "TEST1",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "187abc5eff924b758ceaeca22025f2b5",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "bC0b23a2E44D4740b0EcD54dE90D52b4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"raj.abc@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://mule-db-customer-sapi-dev-v1.us-e2.cloudhub.io:80/api/query/customer",
+					"protocol": "http",
+					"host": [
+						"mule-db-customer-sapi-dev-v1",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"query",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
